@@ -2,7 +2,7 @@ class CalendarsController < ApplicationController
     # before_action :find_coffee_shop_by_id, only: [:show, :update, :destroy]
 
   def index
-    @calendars = Calendar.all 
+    @calendars = Calendar.all
     render json: @calendars, include: :calendars
   end
 
@@ -16,9 +16,9 @@ class CalendarsController < ApplicationController
       references: params[:references],
     )
     # render json: @coffee_shop
-    redirect_to "http://localhost:3001"
+    render json: @calendar
   end
-    
+
   def update
     @calendar.update(
       references: params[:references]
@@ -27,7 +27,7 @@ class CalendarsController < ApplicationController
   end
 
   def destroy
-    @calendar.destroy 
+    @calendar.destroy
     render json: {message: "You have successfully destroyed your calendar"}
   end
 
