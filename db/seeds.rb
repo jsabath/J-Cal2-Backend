@@ -9,11 +9,9 @@
 # Event.destroy_all
 # Calendar.destroy_all
 # User.destroy_all
-
-event1 = Event.create(event: "Dentist Appt", location: "Cool Smilez", start_time: "2020-05-08 01:30", end_time: "2020-05-05 02:30:")
-event2 = Event.create(event: "Teach", location: "Flatiron Campus", start_time: "2020-05-10 07:30", end_time: "2020-05-10 10:00")
-event3 = Event.create(event: "Oil Change", location: "Jiffy Lube", start_time: "2020-05-15 03:00", end_time: "2020-05-15 04:15")
-
-#
-# calendar1 = Calendar.create()
 user1 = User.create(username: "Ahmed")
+calendar1 = Calendar.create(user: user1)
+
+event1 = Event.create(event: "Dentist Appt", location: "Cool Smilez", start_time: "2020-05-08 01:30", end_time: "2020-05-05 02:30", calendar_id: calendar1.id)
+event2 = Event.create(event: "Teach", location: "Flatiron Campus", start_time: "2020-05-10 07:30", end_time: "2020-05-10 10:00", calendar_id: calendar1.id)
+event3 = Event.create(event: "Oil Change", location: "Jiffy Lube", start_time: "2020-05-15 03:00", end_time: "2020-05-15 04:15", calendar_id: calendar1.id)
