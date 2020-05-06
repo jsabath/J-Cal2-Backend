@@ -24,9 +24,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_173701) do
     t.string "location"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer "calendar_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "calendar_id", null: false
     t.index ["calendar_id"], name: "index_events_on_calendar_id"
   end
 
